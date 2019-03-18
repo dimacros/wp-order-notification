@@ -23,11 +23,11 @@ class AdminMenu
         );  
     }
 
-    public static function view()
+    public static function view($name, array $data)
     {
         ob_start();
             extract($data);
-            include(VIEW_DIR . '/' . $name . '.php');
+            include(__DIR__ . '/Views//' . $name . '.php');
             $html = ob_get_contents();
         ob_end_clean();
 

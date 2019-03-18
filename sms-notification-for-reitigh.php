@@ -9,8 +9,7 @@ License: Proprietary
 */
 
 defined('ABSPATH') or die('No script kiddies please!');
-define('DEFAULT_COUNTRY_CODE', 'PE');
-define('VIEW_DIR', __DIR__ . '/Views');
+define('DEFAULT_COUNTRY_CODE', 'AR');
 
 require __DIR__ . '/vendor/autoload.php';
 
