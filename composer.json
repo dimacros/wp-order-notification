@@ -3,12 +3,13 @@
     "description": "Plugin creado para el cliente reitighconsultora",
     "type": "wp-plugin",
     "autoload": {
-        "psr-4": {"Dimacros\\": "src/"}
+        "psr-4": {"Dimacros\\": "src/"},
+        "files": ["helpers.php"]
     },
     "require": {
         "aws/aws-sdk-php": "^3.70",
-        "twilio/sdk": "^5.24",
-        "giggsey/libphonenumber-for-php": "^8.10"
+        "giggsey/libphonenumber-for-php": "^8.10",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "license": "Propietary",
     "authors": [

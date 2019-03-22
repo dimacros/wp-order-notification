@@ -7,6 +7,7 @@ use Aws\Sns\Exception\SnsException;
 use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
+use Dimacros;
 use Exception;
 
 class SendTicketNotification 
@@ -37,14 +38,8 @@ class SendTicketNotification
         
         $ticket_id = $tickets[0]->ID;
         $order_key = get_post_meta($order_id, '_tc_paid_date', true);
-        $security = wp_create_nonce("download_ticket_{$ticket_id}_{$order_key}");
+        $ticket_download_url = Dimacros\generate_short_link($ticket_id, $order_key);
 
-        $ticket_download_url = home_url('/') . '?' . http_build_query([
-            'download_ticket' => $ticket_id, 
-            'order_key' => $order_key,
-            'download_ticket_nonce' => $security
-        ]);
-        
         $util = PhoneNumberUtil::getInstance();
 
         try {
