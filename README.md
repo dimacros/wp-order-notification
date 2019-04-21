@@ -1,6 +1,6 @@
-SMS Notification
+AWS SMS Notification
 =======================
-Enviar un SMS con la url del ticket, luego de confirmar el pedido. La url por defecto viene acortado por el acortador Bitly. 
+Enviar un SMS al cliente con la url del ticket inmediatamente al confirmar el pedido. La url por defecto ya viene acortado por el acortador Bitly. 
 
 ```php
     //Important, in the wp-config.php file you must store the required credentials:
